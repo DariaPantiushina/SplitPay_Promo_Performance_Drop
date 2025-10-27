@@ -22,8 +22,42 @@ SplitPay transactions dropped sharply: completed rides remained stable, successf
 
 The analyst is tasked with finding out:
 
-- 1) Where in the ride funnel the conversion breaks (done → pay)?
+- Where in the ride funnel the conversion breaks (done → pay)?
 
-- 2) Who is affected (device, platform, payment provider)?
+- Who is affected (device, platform, payment provider)?
 
-- 3) Why it happens - is this a technical failure, a discount logic bug, or a user behavior shift?
+- Why it happens - is this a technical failure, a discount logic bug, or a user behavior shift?
+
+## Hypotheses ("Why SplitPay payments suddenly dropped?")
+
+**1. UX / Product**
+
+📌 Payment button or discount banner is missing after SDK update;
+📌 Discount is not displayed correctly - users see full price and abandon payment;
+📌 The checkout session is lost when switching between SplitPay and the ride app.
+
+**2. Technical / Integration**
+
+📌 SplitPay SDK on iOS returns an error on applyDiscount() or initPayment();
+📌 Timeout or API error in SplitPay service for mobile requests → payment fails silently;
+📌 Post–October release introduced a change in eligibility or discount logic breaking iOS calls.
+
+**3. Analytical / Data Tracking**
+
+📌 The event payment_success is missing from iOS logs;
+📌 Session ID mismatch after redirect into SplitPay → completed payments not attributed correctly.
+
+**4. Behavioral (control)**
+
+📌 Users intentionally delay SplitPay payments or switch to another payment method (minor contributor).
+
+
+
+
+
+
+
+
+
+
+
