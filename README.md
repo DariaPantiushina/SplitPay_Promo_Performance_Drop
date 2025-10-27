@@ -2,21 +2,17 @@
 
 ## Business background
 
-The company operates a decentralized ride-hailing platform, connecting passengers and drivers directly via a multi-channel digital ecosystem - mobile apps (iOS & Android) and web interface. Riders can pay either by card or via SplitPay, a newly launched deferred payment service integrated in mid-September 2025.
+The company operates a decentralized ride-hailing platform, connecting passengers and drivers directly through a multi-channel digital ecosystem - mobile apps (iOS & Android) and a web interface. Riders can pay either by card or via SplitPay, a newly launched deferred payment service.
 
-SplitPay 2.0 introduced:
+In October 2025 a new promotion was launched: "20% off for rides paid via the new SplitPay in-app direct transfer".
 
-- a discount mechanism for eligible users;
+The **business objective** was to increase SplitPay’s share among all completed rides from 25% to 40% by the end of Q4.
 
-- instant installment approvals through SDK integration;
+However, two weeks after launch, the analytics and product teams detected an **anomaly** - SplitPay transactions dropped sharply:
 
-- and a new promotion campaign encouraging SplitPay usage across channels.
+- the number of completed rides remained stable,
 
-The **business goal** was to increase SplitPay share among all completed rides from 25% → 40% by the end of Q4.
-
-Two weeks after launch the analytics and product teams noticed an **anomaly**:
-
-SplitPay transactions dropped sharply: completed rides remained stable, successful payments collapsed by ~3×, while other payment methods (card) stayed normal.
+- while successful payments collapsed by ~ 3×
 
 ## Questions clarifying the context
 
@@ -36,7 +32,7 @@ The analyst is tasked with finding out:
 
 📌 Discount is not displayed correctly - users see full price and abandon payment;
 
-📌 The checkout session is lost when switching between SplitPay and the ride app.
+📌 The checkout session is lost when switching between SplitPay and the ride app;
 
 **2. Technical / Integration**
 
@@ -44,13 +40,13 @@ The analyst is tasked with finding out:
 
 📌 Timeout or API error in SplitPay service for mobile requests → payment fails silently;
 
-📌 Post–October release introduced a change in eligibility or discount logic breaking iOS calls.
+📌 Post–October release introduced a change in eligibility or discount logic breaking iOS calls;
 
 **3. Analytical / Data Tracking**
 
 📌 The event payment_success is missing from iOS logs;
 
-📌 Session ID mismatch after redirect into SplitPay → completed payments not attributed correctly.
+📌 Session ID mismatch after redirect into SplitPay → completed payments not attributed correctly;
 
 **4. Behavioral (control)**
 
