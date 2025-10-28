@@ -1,4 +1,4 @@
-# SplitPay conversion drop analysis - Product funnel case
+# SplitPay conversion drop analysis - Ride-hailing platform
 
 ## Business background
 
