@@ -40,7 +40,7 @@ The analyst is tasked with finding out:
 
 📌 Timeout or API error in SplitPay service for mobile requests → payment fails silently;
 
-📌 Post–October release introduced a change in eligibility or discount logic breaking iOS calls;
+📌 Post October release introduced a change in eligibility or discount logic breaking iOS calls;
 
 **3. Analytical / Data Tracking**
 
