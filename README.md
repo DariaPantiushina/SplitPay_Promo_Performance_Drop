@@ -52,6 +52,42 @@ The analyst is tasked with finding out:
 
 📌 Users intentionally delay SplitPay payments or switch to another payment method (minor contributor).
 
+## Data Mart Schema
+
+The architecture of the data mart includes **four layers**:
+
+1. stg_ (**Staging**)
+
+- **stg_ride_events**(session_id, ride_id, user_id, city_id, device_type, platform, payment_provider, event_type, event_ts);
+
+- **stg_splitpay_logs**(ride_id, session_id, event_type, event_ts);
+
+- **stg_driver_supply**(city_id, snapshot_ts, active_drivers, avg_eta);
+
+2. dim_ (**Dimensions**)
+
+- **dim_device**(device_type, platform);
+
+- **dim_payment_provider**(payment_provider);
+
+- **dim_period**(pre_from, pre_to, post_from, post_to)
+
+Contains reference tables for consistent dimension data.
+
+3. fact_ (**Facts**)
+
+- **labeled**(session_id, ride_id, user_id, device_type, platform, payment_provider, ts_search, ts_req, ts_acc, ts_start, ts_done, ts_pay, grp, period);
+
+- **fact_splitpay_status**(ride_id, session_id, has_discount, has_error, has_fail)
+
+Contains fact tables with normalized funnel steps per session and splitpay_status data.
+
+4. marts_ (**Analytics Marts**)
+
+- **ride_funnel_metrics**(event_date, device_type, platform, payment_provider, period, cnt_search, cnt_req, cnt_done, cnt_pay, cnt_discount, cnt_error, cnt_fail, r_search_to_req, r_req_to_done, r_done_to_pay, p_discount_applied, p_discount_error, p_transfer_fail)
+
+Contains aggregated summary tables for reporting and visualization.
+
 ## SQL-analysis
 
 1) Preparation step: normalize funnel steps per session;
