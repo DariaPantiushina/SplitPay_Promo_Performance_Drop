@@ -6,7 +6,7 @@ WITH joined AS (
         f.platform,
         f.payment_provider,
         f.period,
-        DATE_TRUNC('day', f.ts_done) AS event_date,  -- 🔸 добавляем временную ось
+        DATE_TRUNC('day', f.ts_done) AS event_date,
         f.session_id,
         f.ride_id,
         f.ts_search, f.ts_req, f.ts_done, f.ts_pay,
