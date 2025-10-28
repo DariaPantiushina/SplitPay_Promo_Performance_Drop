@@ -98,6 +98,18 @@ Contains aggregated summary tables for reporting and visualization.
 
 4) Verifying the correct application of discounts (SplitPay logs)
 
+## Creating a Dashboard in Tableau 
+
+["Dashboard"](tableau/dashboard.pdf), also available via public link: https://public.tableau.com/views/SplitPayPaymentConversion-DiagnosticDashboard/SplitPayPaymentConversionDiagnosticDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link:
+
+1) **Trend Over Time** (conversion "done → pay") - line chart visualizes daily payment conversion rates across platforms. The chart highlights a sharp decline on October 1 (promo launch date) specifically for iOS App, while Android and Desktop remain stable. The constant line marks the launch of the SplitPay promotion, confirming the timing of the anomaly;
+
+2) **Funnel Overview** (conversion per step (after promotion launch)) - stacked bar chart shows funnel performance for each stage: "search → request → done → pay". Conversion drops significantly at the final step for SplitPay users compared to card payments, showing payment completion issues rather than upstream funnel drop-offs;
+
+3) **Discount Health - SplitPay (post period)** - horizontal bars compare Discount Applied and Discount Error rates by device and platform. All non-iOS channels perform consistently, while iOS App shows degraded discount health - only 88.4% applied and 64.6% error rate;
+
+4) **Provider × Platform × Device Diff** - clustered bar chart compares final "done → pay" conversion rates by payment method, platform, and device. SplitPay underperforms across all, but the gap is most critical for iOS App, while Card and Web maintain normal levels.
+
 ## Interpretation of findings & Business insights & Recommendations
 
 1) **Diff-in-Diff** shows a clear drop only for SplitPay on the "done → pay" step;
