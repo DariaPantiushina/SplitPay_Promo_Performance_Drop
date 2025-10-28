@@ -1,3 +1,4 @@
+-- Normalize funnel steps per session
 DROP TABLE IF EXISTS fact.labeled;
 CREATE TABLE fact.labeled AS
 WITH events_norm AS (
