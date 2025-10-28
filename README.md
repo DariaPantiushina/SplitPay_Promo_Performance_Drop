@@ -1,4 +1,4 @@
-# SplitPay Promo Performance Drop
+# SplitPay conversion drop analysis - Product funnel case
 
 ## Business background
 
