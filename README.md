@@ -1,4 +1,4 @@
-# SplitPay_Promo_Performance_Drop
+# SplitPay Promo Performance Drop
 
 ## Business background
 
