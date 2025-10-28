@@ -4,7 +4,7 @@
 
 The company operates a decentralized ride-hailing platform, connecting passengers and drivers directly through a multi-channel digital ecosystem - mobile apps (iOS & Android) and a web interface. Riders can pay either by card or via SplitPay, a newly launched deferred payment service.
 
-In October 2025 a new promotion was launched: "20% off for rides paid via the new SplitPay in-app direct transfer".
+In October 2025 **a new promotion was launched**: "20% off for rides paid via the new SplitPay in-app direct transfer".
 
 The **business objective** was to increase SplitPay’s share among all completed rides from 25% to 40% by the end of Q4.
 
@@ -70,7 +70,7 @@ The analyst is tasked with finding out:
 
 3) SplitPay logs show much higher discount_error share (≈ 0.7) for *iOS App* users → the issue originates from the SplitPay SDK rather than from user behavior;
 
-4) Recommendations:
+4) **Recommendations**:
 
 - **Fix & Verification**
 
